@@ -4,25 +4,21 @@
 using namespace std;
 
 int fibSumLastThreeDigits(int a, int b, int l, int r) {
-    int f0 = a % 1000; // 只保留最后三位
-    int f1 = b % 1000; // 只保留最后三位
+    vector<int> f(r + 1); // 使用向量来存储斐波那契数列
+    f[0] = a % 1000; // 保留最后三位
+    f[1] = b % 1000; // 保留最后三位
     int sum = 0;
 
-    // 特殊处理初始情况
-    if (l == 0) sum = f0;
-    if (l <= 1) sum += f1;
-    sum %= 1000; // 确保和也只保留最后三位
-
-    // 从 2 开始计算斐波那契数列，直到 r
+    // 计算整个斐波那契数列直到r
     for (int i = 2; i <= r; ++i) {
-        int f2 = (f0 + f1) % 1000; // 只保留计算结果的最后三位
-        f0 = f1;
-        f1 = f2;
-        if (i >= l) sum = (sum + f2) % 1000; // 如果在指定范围内，将其添加到总和中
+        f[i] = (f[i - 1] + f[i - 2]) % 1000;
     }
 
-    // 对于 l > 1 的情况，初始 sum 应该为 0
-    // 因此，只有当索引在范围内时，才开始累加
+    // 累加指定范围内的斐波那契数
+    for (int i = l; i <= r; ++i) {
+        sum = (sum + f[i]) % 1000;
+    }
+
     return sum;
 }
 
