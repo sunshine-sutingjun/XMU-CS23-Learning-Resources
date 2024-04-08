@@ -14,6 +14,7 @@ ListNode *createList()
     ListNode *p1, *p2;
     p1 = new ListNode;
     p2 = p1;
+
     cin >> p1->val;
     while (p1->val != -1)
     {
@@ -22,7 +23,7 @@ ListNode *createList()
         else
             p2->next = p1;
         p2 = p1;
-        p1 = new struct ListNode;
+        p1 = new ListNode;
         cin >> p1->val;
     }
     p2->next = NULL;
@@ -30,19 +31,13 @@ ListNode *createList()
     return head;
 }
 
-ListNode *getKthFromEnd(ListNode *head, int k) // 注意，这里不管是从前往后还是从后往前都是从0开始数数
+ListNode *middleNode(ListNode *head)
 {
     ListNode *fast = head, *slow = head;
-    for (int i = 0; i <= k; ++i)
+    while (fast != NULL && fast->next != NULL)
     {
-        if (fast == NULL)
-            return NULL; // k超过链表长度
-        fast = fast->next;
-    }
-    while (fast != NULL)
-    {
-        fast = fast->next;
         slow = slow->next;
+        fast = fast->next->next;
     }
     return slow;
 }
@@ -50,13 +45,20 @@ ListNode *getKthFromEnd(ListNode *head, int k) // 注意，这里不管是从前
 int main()
 {
     ListNode *head;
-    int k;
     head = createList();
-    cin >> k;
-    ListNode *ans = getKthFromEnd(head, k);
+    ListNode *ans = middleNode(head);
+
     if (ans == NULL)
+    {
         cout << "-1";
+    }
     else
-        cout << ans->val;
+    {
+        while (ans != NULL)
+        {
+            cout << ans->val << " ";
+            ans = ans->next;
+        }
+    }
     return 0;
 }
