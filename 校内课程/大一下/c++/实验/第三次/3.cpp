@@ -10,58 +10,36 @@ struct node
 
 node *createList()
 {
-    int num;
-    node *head = NULL, *tail = NULL;
-    while (cin >> num && num != -1)
+    node *dummy = new node;
+    node *current = dummy;
+    int x;
+    while (cin >> x && x != -1)
     {
         node *newNode = new node;
-        newNode->val = num;
+        newNode->val = x;
         newNode->next = NULL;
-        if (head == NULL)
-        {
-            head = newNode;
-            tail = newNode;
-        }
-        else
-        {
-            tail->next = newNode;
-            tail = newNode;
-        }
+        current->next = newNode;
+        current = current->next;
     }
-    return head;
+    return dummy->next;
 }
 
 node *deleteElements(node *head, int v)
 {
-    // 删除头部为v的节点
-    while (head != NULL && head->val == v)
+    node *dummy = new node;
+    dummy->next = head;
+    for (node *pre = dummy, *cur = head; cur != NULL; cur = cur->next)
     {
-        node *temp = head;
-        head = head->next;
-        delete temp;
-    }
-
-    if (head == NULL)
-    {
-        return NULL;
-    }
-
-    // 删除非头部为v的节点
-    node *current = head;
-    while (current->next != NULL)
-    {
-        if (current->next->val == v)
+        if (cur->val == v)
         {
-            node *temp = current->next;
-            current->next = current->next->next;
-            delete temp;
+            pre->next = cur->next;
         }
         else
         {
-            current = current->next;
+            pre = cur;
         }
     }
-    return head;
+    return dummy->next;
 }
 
 int main()

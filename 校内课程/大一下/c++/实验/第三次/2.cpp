@@ -9,26 +9,20 @@ struct node
 };
 
 node *createList()
+
 {
-    int num;
-    node *head = NULL, *tail = NULL;
-    while (cin >> num && num != -1)
+    node *dummy = new node;
+    node *current = dummy;
+    int x;
+    while (cin >> x && x != -1)
     {
-        node *newNode = new node; // 创建一个新节点
-        newNode->val = num;       // 设置新节点的值
-        newNode->next = NULL;     // 新节点的下一个节点为空
-        if (head == NULL)
-        { // 如果链表为空，则新节点即为头节点
-            head = newNode;
-            tail = newNode; // 同时也是尾节点
-        }
-        else
-        {                         // 否则，将新节点添加到链表的末尾
-            tail->next = newNode; // 尾节点的下一个节点为新节点
-            tail = newNode;       // 更新尾节点为新节点
-        }
+        node *newNode = new node;
+        newNode->val = x;
+        newNode->next = NULL;
+        current->next = newNode;
+        current = current->next;
     }
-    return head; // 返回链表的头节点
+    return dummy->next;
 }
 
 node *reverseList(node *head)
