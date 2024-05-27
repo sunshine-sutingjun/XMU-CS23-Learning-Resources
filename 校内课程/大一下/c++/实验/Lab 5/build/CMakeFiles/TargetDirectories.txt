@@ -1,0 +1,3 @@
+C:/Users/ms i/Desktop/my-daily-stuff/SchoolLabsForCpp/Lab 5/build/CMakeFiles/Test.dir
+C:/Users/ms i/Desktop/my-daily-stuff/SchoolLabsForCpp/Lab 5/build/CMakeFiles/edit_cache.dir
+C:/Users/ms i/Desktop/my-daily-stuff/SchoolLabsForCpp/Lab 5/build/CMakeFiles/rebuild_cache.dir
