@@ -1,0 +1,14 @@
+[
+{
+  "directory": "C:/Users/ms i/Desktop/my-daily-stuff/Code/SchoolLabsForCpp/Lab 7/build",
+  "command": "C:\\TDM-GCC-64\\bin\\c++.exe -g -o CMakeFiles\\Lab7.dir\\ComputerLab.cpp.obj -c \"C:\\Users\\ms i\\Desktop\\my-daily-stuff\\Code\\SchoolLabsForCpp\\Lab 7\\ComputerLab.cpp\"",
+  "file": "C:\\Users\\ms i\\Desktop\\my-daily-stuff\\Code\\SchoolLabsForCpp\\Lab 7\\ComputerLab.cpp",
+  "output": "CMakeFiles\\Lab7.dir\\ComputerLab.cpp.obj"
+},
+{
+  "directory": "C:/Users/ms i/Desktop/my-daily-stuff/Code/SchoolLabsForCpp/Lab 7/build",
+  "command": "C:\\TDM-GCC-64\\bin\\c++.exe -g -o CMakeFiles\\Lab7.dir\\main.cpp.obj -c \"C:\\Users\\ms i\\Desktop\\my-daily-stuff\\Code\\SchoolLabsForCpp\\Lab 7\\main.cpp\"",
+  "file": "C:\\Users\\ms i\\Desktop\\my-daily-stuff\\Code\\SchoolLabsForCpp\\Lab 7\\main.cpp",
+  "output": "CMakeFiles\\Lab7.dir\\main.cpp.obj"
+}
+]
