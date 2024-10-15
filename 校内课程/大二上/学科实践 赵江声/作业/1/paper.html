@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Html Knowledge Exam</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: left;
+      }
+      .question {
+        margin-left: 20px;
+      }
+      .question-title {
+        font-weight: bold;
+      }
+      .choices {
+        margin-left: 20px;
+      }
+      .choices label {
+        display: block;
+      }
+      textarea {
+        margin-left: 20px;
+        height: 100px;
+        padding: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Html知识考试</h1>
+    <h3>考试科目：Html知识</h3>
+    <h3>时 间：100分钟</h3>
+    <h3>得 分：</h3>
+    <div class="form-container">
+      <form>
+        <div>
+          <label for="class">班级 (必填)</label>
+          <input type="text" id="class" class="input-text" required />
+        </div>
+        <div>
+          <label for="student-id">学号 (必填)</label>
+          <input type="text" id="student-id" class="input-text" required />
+        </div>
+        <div>
+          <label for="name">姓名 (必填)</label>
+          <input type="text" id="name" class="input-text" required />
+        </div>
+
+        <div class="question">
+          <p class="question-title">一、填空题 (每题10分，共20分)</p>
+          <p>1. Html的全称是:</p>
+          <input type="text" class="input-text" />
+          <p>2. href的全称是:</p>
+          <input type="text" class="input-text" />
+        </div>
+
+        <div class="question">
+          <p class="question-title">二、选择题 (每题10分，共20分)</p>
+          <p>1. 超链接使用哪个标签:</p>
+          <div class="choices">
+            <label><input type="radio" name="question1" /> A. addr</label>
+            <label><input type="radio" name="question1" /> B. img</label>
+            <label><input type="radio" name="question1" /> C. a</label>
+            <label><input type="radio" name="question1" /> D. div</label>
+          </div>
+          <p>2. 以下哪个标签不会自动换行:</p>
+          <div class="choices">
+            <label><input type="radio" name="question2" /> A. div</label>
+            <label><input type="radio" name="question2" /> B. span</label>
+            <label><input type="radio" name="question2" /> C. p</label>
+            <label><input type="radio" name="question2" /> D. header</label>
+          </div>
+        </div>
+
+        <div class="question">
+          <p class="question-title">三、多项选择题 (每题10分，共20分)</p>
+          <p>1. 以下哪个属性是a标签可以使用的:</p>
+          <div class="choices">
+            <label><input type="checkbox" name="question3" /> A. href</label>
+            <label><input type="checkbox" name="question3" /> B. width</label>
+            <label><input type="checkbox" name="question3" /> C. id</label>
+            <label><input type="checkbox" name="question3" /> D. class</label>
+          </div>
+          <p>2. 以下哪些标签适合用于表示网页的结构:</p>
+          <div class="choices">
+            <label><input type="checkbox" name="question4" /> A. div</label>
+            <label><input type="checkbox" name="question4" /> B. section</label>
+            <label><input type="checkbox" name="question4" /> C. header</label>
+            <label><input type="checkbox" name="question4" /> D. footer</label>
+          </div>
+        </div>
+
+        <div class="question">
+          <p class="question-title">四、判断题 (每题10分，共20分)</p>
+          1.
+          <label><input type="radio" name="question5" /> O</label>
+          <label><input type="radio" name="question5" /> X</label>
+          <span>Html的可以将任何图片和文字的信息使用纯文本的方式表示出来</span>
+          <p></p>
+          2.
+          <label><input type="radio" name="question6" /> O</label>
+          <label><input type="radio" name="question6" /> X</label>
+          <span>table标签中, 只能放置tr，thead，tfoot三种子标签</span>
+        </div>
+
+        <div class="question">
+          <p class="question-title">五、填空题 (每题10分，共20分)</p>
+          <p>1. 使用table结构显示出1-2-1的布局形式</p>
+          <textarea></textarea>
+        </div>
+
+        <h3>总分：</h3>
+
+        <div class="footer">
+          <button type="submit">计算分数</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
