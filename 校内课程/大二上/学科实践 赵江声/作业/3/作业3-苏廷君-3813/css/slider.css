@@ -1,0 +1,45 @@
+﻿.image-slider-container {
+    height: 100%;
+    position: relative;
+}
+
+.image-slider-container .images {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-slider-container .images .img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+
+.image-slider-container .btn {
+    background: #7f7f7f;
+    width: 3em;
+    height: 3em;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    color: #fff;
+    transition: all .5s;
+    opacity: .2;
+}
+
+.image-slider-container .btn:hover {
+    opacity: 1;
+}
+
+.image-slider-container .prev-btn {
+    left: 20px;
+}
+
+.image-slider-container .next-btn {
+    right: 20px;
+}

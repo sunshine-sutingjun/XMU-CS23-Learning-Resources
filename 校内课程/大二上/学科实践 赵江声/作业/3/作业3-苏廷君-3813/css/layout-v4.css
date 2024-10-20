@@ -1,0 +1,386 @@
+/* 0. 基础设置  */
+/* 初始化 */
+:root {
+    --primary-color: #003C88;
+    --mask-color: #ced9e8;
+    --special-color: #D8422A;
+    --default-text: rgb(49, 49, 49);
+    --gray-border: rgb(222, 222, 222);
+    --secondary-text: #888888;
+}
+
+html {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimSun, sans-serif;
+    font-size: 1em;
+    line-height: 1.4;
+    padding: 0px;
+    margin: 0px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--default-text);
+}
+
+::-moz-selection {
+    background: #fff;
+    text-shadow: none;
+}
+
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+
+.fl {
+	float: left;
+}
+
+.block {
+    display: block;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+audio,
+canvas,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+img {
+    background: url('../images/figure-nopic.png') no-repeat 50% 50%;
+}
+
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+body, html, h1, h2, h3, h4, h5, h6, a, ul, li{
+    font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,\\5FAE\8F6F\96C5\9ED1,Arial,sans-serif;
+}
+
+body{
+    background: #fff;
+    
+    margin: 0;
+    padding: 0;
+}
+
+ul, li{
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+
+iframe{
+    border: none;   
+}
+
+.i-scroll {
+    overflow: hidden;
+    padding-bottom:1px !important;
+}
+
+.text-overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    white-space: nowrap;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+img.fit-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+img.fit-contain {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.icon {
+    stroke: currentColor;
+}
+
+.icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.text-cut {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.special-text {
+    color: var(--special-color);
+}
+
+.anchor-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    box-shadow: none;
+    text-decoration: none;
+}
+
+.divider {
+    height: 100%;
+    width: 1px;
+    border-left: 1px solid var(--gray-border);
+}
+
+.text-divider {
+    color: var(--primary-color);
+    font-size: 20px;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    font-weight: bold;
+}
+
+.text-divider span {
+    padding: 0px 15px;
+    position: relative;
+}
+
+.text-divider span::before, .text-divider span::after {
+    position: absolute;
+    content: "";
+    width: 1200px;
+    height: 0;
+    top: 50%;
+    left: 100%;
+    border: none;
+    border-bottom: 1px solid var(--gray-border);
+    z-index: 1;
+    opacity: 0.5;    
+}
+
+.text-divider span::before {
+    left: auto;
+    right: 100%;
+}
+
+.pb_sys_style1 .p_no_d {
+    border-color: var(--primary-color) !important;
+    background-color: var(--primary-color) !important;
+}
+
+/****************************
+   1. 导航菜单
+****************************/
+body {
+    position: relative !important;
+}
+
+.desktop-header {
+    width: 100%;
+    background: var(--primary-color);
+    padding: 10px 0px;
+}
+
+.desktop-header .nav-row {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 1400px;
+    margin: 0 auto;
+}
+
+.desktop-header .nav-row .logo {
+    /* Add by WFJ */
+    max-height: 50px;
+    /* max-height: 36px; */
+    background: none;
+}
+
+.desktop-header .nav-row .desktop-nav {
+    margin-left: auto;
+    display: flex;
+    position: relative;
+}
+
+.desktop-header .nav-row .desktop-nav .nav-item {
+    display: block;
+    line-height: 50px;
+    color: #fff;
+    font-weight: bold;
+    padding: 0px 15px;
+    transition: color .5s;
+    z-index: 5;
+}
+
+.desktop-header .nav-row .desktop-nav .nav-item.on {
+    color: var(--primary-color);
+}
+
+.desktop-header .nav-row .desktop-nav .bg {
+    background: #fff;
+    height: 50px;
+    position: absolute;
+    transition: all .5s;
+    z-index: 0;
+}
+
+/* .desktop-header .nav-row .desktop-nav .nav-item.cur,
+.desktop-header .nav-row .desktop-nav .nav-item:hover {
+    color: var(--primary-color);
+    background: #fff;
+} */
+
+.sticky-header {
+    position: fixed;
+    top: 0px;
+    z-index: 99;
+}
+
+/****************************
+   2. 主体部分
+****************************/
+.main-section {
+    width: 1400px;
+    margin: 0 auto;
+    padding-top: 15px;
+}
+
+.row {
+    display: flex;
+}
+
+.row.space-between {
+    justify-content: space-between;
+}
+
+.row > div {
+    box-sizing: border-box;
+}
+
+.row .col-75 {
+    width: 75%;
+}
+.row .col-66 {
+    width: 66.6666%;
+}
+
+.row .col-50 {
+    width: 50%;
+}
+
+.row .col-45 {
+    width: 48%;
+}
+
+.row .col-30 {
+    width: 30%;
+}
+
+.row .col-33 {
+    width: 33.33333%;
+}
+
+.row .col-25 {
+    width: 25%;
+}
+
+.row .col-100 {
+    width: 100%
+}
+
+.pd15 {
+    padding: 15px;
+}
+
+/****************************
+   3. 尾部
+****************************/
+footer {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 20px 0;
+}
+
+footer .row {
+    width: 1400px;
+    margin: 0 auto;
+}
+
+footer .row .icon {
+    width: 416px;
+    height: 119px;
+    object-fit: contain;
+    margin-top: 30px;
+    background: none;
+}
+
+footer .row .qr {
+    display: flex;
+}
+
+footer .row .qr .mr10 {
+    margin-right: 40px;
+}
+
+footer .row .qr div {
+    font-size: 12px;
+    color: #fff;
+    width: 150px;
+}
+
+footer .row .qr span {
+    display: block;
+    text-align: center;
+    margin-top: 5px;
+}
+
+footer .row .qr img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+footer .row .contact {
+    font-family: MicrosoftYaHei;
+    font-size: 18px;
+    color: #FFFFFF;
+    line-height: 42px;
+}
+
+footer .row .copyright {
+    line-height: 40px;
+    margin: 0 auto;
+}
+
+footer .row .copyright a {
+    color: #fff;
+}
