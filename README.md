@@ -64,7 +64,7 @@ git checkout -b feature/YourName
 
 ## 许可证
 
-本项目采用 MIT 许可证。详细信息请参阅 [LICENSE](./LICENSE) 文件。
+本项目采用 CC-BY-NC-SA 许可证。详细信息请参阅 [LICENSE](./LICENSE) 文件。
 
 ## 联系方式
 
