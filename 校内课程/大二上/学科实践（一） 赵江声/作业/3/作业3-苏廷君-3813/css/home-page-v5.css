@@ -1,0 +1,492 @@
+.mb20 {
+    margin-bottom: 20px;
+}
+
+.mb31 {
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--gray-border);
+    margin-bottom: 15px;
+}
+
+.mb31-noborder {
+    margin-bottom: 31px;
+}
+
+.bl15 {
+    border-left: 1px solid var(--gray-border);
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+.blml15 {
+    margin-left: 15px;
+    border-left: 1px solid var(--gray-border);
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+.banner {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.banner img {
+    width: 100%;
+    height: 200px;
+}
+
+/************************
+0. 主切换图显示时，上方的导航
+************************/ 
+.desktop-header {
+    background: linear-gradient(#003C88b3,rgba(0,0,0,0));
+    transition: all 0.3s ease-out 0s;
+    padding-bottom: 30px;
+}
+
+.desktop-header.active {
+    background: #003C88;
+    padding-bottom: 10px;
+}
+
+
+/************************
+1. 主切换图
+************************/ 
+.main-slider {
+    position: relative;
+}
+
+.main-slider .images .img {
+    position: relative;
+    float: left;
+}
+
+.main-slider .images .img.out-of-sight {
+    height: 0;
+    opacity: 0;
+}
+
+.main-slider .images .img img {
+    width: 100%;
+}
+
+.main-slider .img {
+    background-position: 50% 0%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.main-slider .img.img-1 {
+    opacity: 1;
+}
+
+.main-slider .btn {
+    width: 4em;
+    height: 4em;
+    top: -70px;
+}
+
+.main-slider .slider-tags {
+    margin: 0 auto;
+    display: grid;
+    column-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    
+    position: absolute;
+    bottom: 10px;
+    width: 800px;
+    left: calc(50% - 400px);
+}
+
+.main-slider .slider-tags .slider-tag {
+    display: block;
+    text-align: center;
+    color: #fff;
+    background: var(--primary-color);
+    padding: 20px 0px;
+    opacity: .6;
+}
+
+.main-slider .slider-tags .slider-tag.cur {
+    opacity: 1;
+}
+
+.main-slider .slider-tags .slider-tag svg {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto;
+}
+
+/* .main-slider .slider-tags .slider-tag {
+    display: table;
+    text-align: center;
+    vertical-align: middle;
+    color: #fff;
+    background: var(--primary-color);
+    line-height: 80px;
+}
+
+.main-slider .slider-tags .slider-tag svg {
+    width: 20px;
+    height: 20px;
+    display: inline;
+} */
+
+/************************
+1. 通用新闻条目
+************************/ 
+.media {
+    display: block;
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--gray-border);
+}
+
+.media:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.media .media-meta {
+    margin: 5px 0 0 0;
+    color: var(--secondary-text);
+    font-size: 12px;
+}
+
+.media .media-body {
+    display: block;
+    width: 100%;
+    min-height: 44px;
+    transition: color .3s;
+}
+
+.media .media-body:hover {
+    color: var(--primary-color)
+}
+
+.box-title {
+    font-size: 20px;
+    line-height: 1.5;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--special-color);
+    position: relative;
+}
+
+.box-title .more {
+    display: block;
+    color: var(--primary-color);
+    position: absolute;
+    right: 5px;
+    top: 4px;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.list-box .media {
+    display: flex;
+}
+
+.list-box .media-body {
+    min-height: auto;
+    transition: color .3s;
+}
+
+.list-box .media-body:hover {
+    color: var(--primary-color)
+}
+
+.list-box .media .media-body {
+    width: 85%;
+    padding-left: 22px;
+    box-sizing: border-box;
+}
+
+.list-box .media .media-meta {
+    margin: 0 0 0 auto;
+}
+
+.list-box .media:before {
+    content: ' ';
+    width: 6px;
+    height: 6px;
+    left: 8px;
+    display: block;
+    top: 8px;
+    transition: all 0.3s;
+    background: var(--primary-color);
+    position: absolute;
+    border-radius: 50%;
+    z-index: 3;
+}
+
+.calendar-news-box .news-item {
+    position: relative;
+}
+
+.calendar-news-box .news-item .media-meta {
+    position: absolute;
+    border: 1px solid var(--primary-color);
+    border-radius: 2px;
+    left: 0px;
+    top: 0px;
+    padding: 5px;
+    margin: 0px;
+}
+
+.calendar-news-box .news-item .media-meta span {
+    display: block;
+    text-align: center;    
+}
+
+.calendar-news-box .news-item .media-meta .day {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.calendar-news-box .news-item .media-body {
+    padding-left: 65px;
+    box-sizing: border-box;
+    min-height: 60px;
+}
+
+/************************
+1. 评估动态
+************************/ 
+.text-divider .more {
+    font-size: 12px;
+    color: var(--primary-color);
+}
+.evolution-box {
+    border-bottom: 1px solid var(--gray-border);
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.announce-box .media:before {
+    content: ' ';
+    width: 9px;
+    height: 9px;
+    left: -20px;
+    display: block;
+    top: 0;
+    transition: all 0.3s;
+    background: var(--gray-border);
+    position: absolute;
+    border-radius: 50%;
+    z-index: 3;
+}
+
+.announce-box .media .media-meta {
+    margin: 5px 0 0 0;
+}
+
+.slider-box {
+    box-sizing: border-box;
+}
+
+.slider-box .slider-container {
+    width: 670px;
+    overflow: hidden;
+    min-height: 409px;
+}
+
+.slider-box .slider-container .images {
+    overflow: hidden;
+    width: 10000px;
+    display: flex;
+}
+
+.slider-box .slider-container .images .img {
+    width: 670px;
+    position: absolute;
+    display: none;
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.slider-box .slider-container .images .img.img-1 {
+    opacity: 1;
+    display: block;
+}
+
+.slider-box .slider-container .images .img img {
+    width: 670px;
+    height: 335px;
+    display: block;
+    object-fit: cover;
+}
+
+.slider-box .slider-container .images .img .media {
+    padding-top: 20px;
+}
+
+.slider-box .slider-container .images .img .media .media-title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    transition: color .3s;
+}
+
+.slider-box .slider-container .images .img .media .media-title:hover {
+    color: var(--primary-color)
+}
+
+.slider-box .slider-container .images .img .media .media-meta {
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+.slider-box .slider-container .images .img .media .media-meta .date {
+    color: var(--secondary-text)
+}
+
+.slider-box .slider-container .btn {
+    bottom: 74px;
+}
+
+/************************
+2. 本科教育教学焦点新闻
+************************/ 
+.horizon-news-box {
+    display: flex;
+}
+
+.horizon-news-box .news-item {
+    flex: 0 0 20%;
+    padding: 10px;
+    border-right: 1px solid var(--gray-border);
+    margin-bottom: 20px;
+    border-bottom: none;
+    box-sizing: border-box;
+}
+
+.horizon-news-box .news-item:last-child {
+    border-right: none;
+}
+
+.horizon-news-box .news-item .media-meta {
+    margin: 5px 0 0 0;
+}
+
+.horizon-news-box .news-item .avatar {
+    width: 100%;
+    height: 130px;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.horizon-news-box .news-item:hover {
+    box-shadow: 0 0 20px #a1a1a1;
+    -webkit-box-shadow: 0 0 20px #a1a1a1;
+    -o-box-shadow: 0 0 20px #a1a1a1;
+    -moz-box-shadow: 0 0 20px #a1a1a1;
+}
+
+
+/********************
+3. 成果展示
+********************/
+.achievements .upper {
+    background: #F3F3F3;
+}
+
+.achievements .lower {
+    background: url(../images/bg-category-section.jpg) 50% 50% no-repeat;
+    padding: 70px 0 90px 0;
+}
+
+.achievements .wrapper {
+    width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+}
+
+.achievements .upper .img-area img {
+    width: 378px;
+    height: 230px;
+    position: relative;
+    top: 60px;
+}
+
+.achievements .upper .text-section {
+    padding: 90px 0px;
+    padding-left: 60px;
+}
+
+.achievements .upper .btn-area {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    width: 100%;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.achievements .upper .btn-area .btn {
+    padding: 10px 30px;
+    background: var(--primary-color);
+    color: #fff;
+    border-radius: 5px;
+}
+
+.achievements .lower .achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 20px;
+    column-gap: 20px;
+}
+
+.achievements .lower .achievement-grid .btn {
+    padding: 10px 25px;
+    background: #fff;
+    color: var(--primary-color);
+    box-sizing: border-box;
+    border-radius: 3px;
+    border-bottom: 3px solid #fff;
+    transition: .5s all;
+    display: flex;
+}
+
+.achievements .lower .achievement-grid .btn:hover {
+    border-bottom: 3px solid var(--special-color);
+}
+
+.achievements .lower .achievement-grid .btn .icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+}
+
+.achievements .lower .achievement-grid .btn .text {
+    line-height: 40px;
+}
+
+/********************
+3. 常用链接
+********************/
+.friend-links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 20px;
+    column-gap: 20px;
+}
+
+.friend-links .link {
+    transition: color .3s;
+}
+
+.friend-links .link:hover {
+    color: var(--primary-color);
+}

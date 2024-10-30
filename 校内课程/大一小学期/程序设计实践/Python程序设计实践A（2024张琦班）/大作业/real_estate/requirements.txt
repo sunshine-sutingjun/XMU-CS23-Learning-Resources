@@ -1,5 +1,0 @@
-flask
-flask_sqlalchemy
-pandas
-matplotlib
-scrapy
