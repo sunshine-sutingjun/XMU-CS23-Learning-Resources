@@ -1,0 +1,1 @@
+<view class="Cont"><view><canvas class="mycanvas" style="{{'width:'+(w+'rpx')+';'+('height:'+(h+'rpx')+';')}}" canvas-id="mycanvas" data-event-opts="{{[['error',[['canvasErrorHandler',['$event']]]]]}}" binderror="__e"></canvas></view></view>

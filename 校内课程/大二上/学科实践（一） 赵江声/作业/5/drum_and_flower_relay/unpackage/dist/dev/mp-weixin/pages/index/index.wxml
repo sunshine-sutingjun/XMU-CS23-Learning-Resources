@@ -1,0 +1,1 @@
+<view><view class="{{[classContain1Obj]}}"><view class="box1">{{pointer}}</view></view><button type="default" data-event-opts="{{[['tap',[['TurnRound',['$event']]]]]}}" bindtap="__e">击鼓传花</button></view>

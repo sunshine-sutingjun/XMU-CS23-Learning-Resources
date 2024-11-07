@@ -1,0 +1,24 @@
+
+.container {
+	display: flex;
+	flex-direction: row;
+
+	margin: 10px;
+}
+.container1 {
+	display: flex;
+
+	width: 600rpx;
+	height: 600rpx;
+	background-color: beige;
+
+	margin: 10rpx auto;
+}
+.box1 {
+	width: 200rpx;
+	height: 200rpx;
+	background-color: fuchsia;
+}
+
+
+

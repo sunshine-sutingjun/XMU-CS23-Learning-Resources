@@ -1,0 +1,1 @@
+<view><content-component wx:if="{{a}}" u-i="2f61a470-0" bind:__l="__l" u-p="{{a}}"></content-component></view>

@@ -1,0 +1,87 @@
+
+.container {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
+.container1 {
+  display: flex;
+  width: 600rpx;
+  height: 600rpx;
+  background-color: beige;
+  margin: 10rpx auto;
+  justify-content: center;
+  align-items: center;
+}
+.box1 {
+  width: 200rpx;
+  height: 200rpx;
+  background-color: fuchsia;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 200rpx;
+  transition: -webkit-transform $uni-animation-duration $uni-animation-timing-function;
+  transition: transform $uni-animation-duration $uni-animation-timing-function;
+  transition: transform $uni-animation-duration $uni-animation-timing-function, -webkit-transform $uni-animation-duration $uni-animation-timing-function;
+}
+.animate {
+  -webkit-animation: move $uni-animation-duration $uni-animation-timing-function;
+          animation: move $uni-animation-duration $uni-animation-timing-function;
+}
+@-webkit-keyframes move {
+from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+}
+to {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+}
+}
+@keyframes move {
+from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+}
+to {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+}
+}
+.position-0 {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.position-1 {
+  justify-content: center;
+  align-items: flex-start;
+}
+.position-2 {
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.position-3 {
+  justify-content: flex-end;
+  align-items: center;
+}
+.position-4 {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.position-5 {
+  justify-content: center;
+  align-items: flex-end;
+}
+.position-6 {
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.position-7 {
+  justify-content: flex-start;
+  align-items: center;
+}
+.position-8 {
+  justify-content: center;
+  align-items: center;
+}
+

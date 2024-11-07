@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/Windows/Windows",
+    "pages/Apple/Apple",
+    "pages/Huawei/Huawei"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/mainPage.png",
+        "selectedIconPath": "static/mainPage.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/Windows/Windows",
+        "iconPath": "static/Windows.png",
+        "selectedIconPath": "static/Windows.png",
+        "text": "Windows"
+      },
+      {
+        "pagePath": "pages/Apple/Apple",
+        "iconPath": "static/Apple.png",
+        "selectedIconPath": "static/Apple.png",
+        "text": "Apple"
+      },
+      {
+        "pagePath": "pages/Huawei/Huawei",
+        "iconPath": "static/Huawei.png",
+        "selectedIconPath": "static/Huawei.png",
+        "text": "华为"
+      }
+    ]
+  },
+  "usingComponents": {}
+}
