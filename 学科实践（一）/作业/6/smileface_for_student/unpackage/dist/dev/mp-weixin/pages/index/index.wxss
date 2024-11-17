@@ -1,0 +1,9 @@
+
+.Cont {
+	box-sizing: border-box;
+}
+.mycanvas {
+	background: orange;
+	margin: 100rpx auto;
+}
+
