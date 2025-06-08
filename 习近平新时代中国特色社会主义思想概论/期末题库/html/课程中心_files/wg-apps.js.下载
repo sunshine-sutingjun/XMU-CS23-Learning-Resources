@@ -1,0 +1,315 @@
+window.loadApps = function (url, lang, uid) {
+  var apiDomain = url || '';
+  var language = lang || 'zh-CN';
+
+  var langAppName = {
+    "zh-CN": "应用中心",
+    "zh-TW": "應用中心",
+    en: "App Center",
+  };
+  var langDesc = {
+    "zh-CN": "暂无应用",
+    "zh-TW": "暫無應用",
+    en: "No application",
+  };
+
+  var appsPanelSettings = {
+    toggle: {
+      appName: {
+        display: false,
+        hiddenSize: 1080,
+      },
+    },
+  };
+
+  /* Wg apps panel */
+  var $wgAppsPanel = document.querySelector("#wg-apps-panel");
+  // $wgAppsPanel.style.display = "none";
+
+  /* Css head */
+  var cssNode = document.createElement("link");
+  cssNode.setAttribute("rel", "stylesheet");
+  cssNode.setAttribute("type", "text/css");
+  cssNode.setAttribute("href", `${apiDomain}/static/css/pure-drawer.css`);
+  document.querySelector("head").appendChild(cssNode);
+
+  var deepExtend = function (out) {
+    out = out || {};
+    for (var i = 1; i < arguments.length; i++) {
+      var obj = arguments[i];
+      if (!obj) {
+        continue;
+      }
+      for (var key in obj) {
+        if (obj.hasOwnProperty(key)) {
+          if (typeof obj[key] === "object") {
+            deepExtend(out[key], obj[key]);
+          } else {
+            out[key] = obj[key];
+          }
+        }
+      }
+    }
+    return out;
+  };
+
+  /* App name with lang */
+  var appName = langAppName[language];
+
+  function displayToggleAppName() {
+    return appsPanelSettings.toggle && appsPanelSettings.toggle.appName && appsPanelSettings.toggle.appName.display;
+  }
+
+  function getToggleAppNameHiddenSize() {
+    return String(
+      appsPanelSettings.toggle && appsPanelSettings.toggle.appName && appsPanelSettings.toggle.appName.hiddenSize
+    );
+  }
+
+  function loadAppsPanelSettings(callback) {
+    var request = new XMLHttpRequest();
+    request.open("GET",
+      `${apiDomain}/api/users/${uid}/apps-panel-settings`,
+      true);
+    request.onload = function () {
+      if (this.status >= 200 && this.status < 400) {
+        var settings = JSON.parse(this.response);
+        if (typeof settings === "object") {
+          deepExtend(appsPanelSettings, settings);
+        }
+        callback();
+      }
+    };
+    request.send();
+  }
+
+  /* Render Apps Html After Get Settings */
+  function renderAppsHtml(application_groups) {
+    /* Html Apps Toggle */
+    var appsHtmlToggleInput = '<input type="checkbox" id="pure-toggle-left" class="pure-toggle" data-toggle="left"/>';
+    var appsHtmlToggleSvg =
+      '<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M18.6,20.2 C17.7163444,20.2 17,19.4836556 17,18.6 C17,17.7163444 17.7163444,17 18.6,17 C19.4836556,17 20.2,17.7163444 20.2,18.6 C20.2,19.4836556 19.4836556,20.2 18.6,20.2 Z M25,20.2 C24.1163444,20.2 23.4,19.4836556 23.4,18.6 C23.4,17.7163444 24.1163444,17 25,17 C25.8836556,17 26.6,17.7163444 26.6,18.6 C26.6,19.4836556 25.8836556,20.2 25,20.2 Z M31.4,20.2 C30.5163444,20.2 29.8,19.4836556 29.8,18.6 C29.8,17.7163444 30.5163444,17 31.4,17 C32.2836556,17 33,17.7163444 33,18.6 C33,19.4836556 32.2836556,20.2 31.4,20.2 Z M18.6,26.6 C17.7163444,26.6 17,25.8836556 17,25 C17,24.1163444 17.7163444,23.4 18.6,23.4 C19.4836556,23.4 20.2,24.1163444 20.2,25 C20.2,25.8836556 19.4836556,26.6 18.6,26.6 Z M25,26.6 C24.1163444,26.6 23.4,25.8836556 23.4,25 C23.4,24.1163444 24.1163444,23.4 25,23.4 C25.8836556,23.4 26.6,24.1163444 26.6,25 C26.6,25.8836556 25.8836556,26.6 25,26.6 Z M31.4,26.6 C30.5163444,26.6 29.8,25.8836556 29.8,25 C29.8,24.1163444 30.5163444,23.4 31.4,23.4 C32.2836556,23.4 33,24.1163444 33,25 C33,25.8836556 32.2836556,26.6 31.4,26.6 Z M18.6,33 C17.7163444,33 17,32.2836556 17,31.4 C17,30.5163444 17.7163444,29.8 18.6,29.8 C19.4836556,29.8 20.2,30.5163444 20.2,31.4 C20.2,32.2836556 19.4836556,33 18.6,33 Z M25,33 C24.1163444,33 23.4,32.2836556 23.4,31.4 C23.4,30.5163444 24.1163444,29.8 25,29.8 C25.8836556,29.8 26.6,30.5163444 26.6,31.4 C26.6,32.2836556 25.8836556,33 25,33 Z M31.4,33 C30.5163444,33 29.8,32.2836556 29.8,31.4 C29.8,30.5163444 30.5163444,29.8 31.4,29.8 C32.2836556,29.8 33,30.5163444 33,31.4 C33,32.2836556 32.2836556,33 31.4,33 Z" class="wg-apps-icon" opacity="1" fill="#FFFFFF"></path></svg>';
+    var appsHtmlToggleAppName = displayToggleAppName() ? `<span class="app-name">${appName}</span>` : '';
+    var appsHtmlToggleLabel =
+      `<label class="pure-toggle-label" for="pure-toggle-left" data-toggle-label="left">${
+        appsHtmlToggleSvg
+      }${appsHtmlToggleAppName
+      }</label>`;
+
+    /* Html drawer */
+    var appsHtmlDrawerHeader =
+      `${'<div class="drawer-header">' +
+      '<span class="app-name">'}${appName}</span>` +
+      `<span id="wg-apps-fold" class="app-fold"></span>` +
+      `</div>`;
+
+    // Apps html prefix
+    var appsHtmlPrefix =
+      `${appsHtmlToggleInput +
+      appsHtmlToggleLabel
+      }<nav class="pure-drawer" data-position="left">${
+        appsHtmlDrawerHeader
+      }<div class="drawer-body">` +
+      `<div class="application-groups">`;
+
+    // Apps html suffix
+    var appsHtmlSuffix =
+      "</div>" +
+      "</div>" +
+      "</nav>" +
+      '<label class="pure-overlay" for="pure-toggle-left" data-overlay="left"></label>';
+
+    var noApplicationHtml =
+      '<div class="no-application"><img src="' +
+      apiDomain +
+      '/static/default-images/no-application.png"><p>' +
+      langDesc[language] +
+      "</p></div>";
+
+    if (application_groups.length > 0) {
+      application_groups.forEach(function (application_group, index) {
+        appsHtmlPrefix += '<div class="application-group">';
+        if (application_group.id) {
+          var content = `<p class="application-group-name">${application_group.name}</p>`;
+          appsHtmlPrefix += content;
+        }
+        application_group.applications.forEach(function (value, index) {
+          var href = value.url;
+          var iconUrl = apiDomain + value.icon_url;
+          var name = getName(language, value) ? getName(language, value) : "";
+          var target = getTarget(value.open_mode);
+          if (href.indexOf("?") != -1) {
+            href += "&lang=" + language;
+          } else {
+            href += "?lang=" + language;
+          }
+          var content =
+            '<div class="drawer-nav" onclick="window.open(' +
+            "'" +
+            href +
+            "','" +
+            target +
+            "'); return false;" +
+            '"><a class="application-icon" href="#" ' +
+            '><img src="' +
+            iconUrl +
+            '" ></a><div class="application-desc"><span class="application-name">' +
+            name +
+            "</span></div></div>";
+          appsHtmlPrefix += content;
+        });
+        appsHtmlPrefix += "</div>";
+      });
+    } else {
+      appsHtmlPrefix += noApplicationHtml;
+    }
+
+    appsHtmlPrefix += appsHtmlSuffix;
+    renderHtml(appsHtmlPrefix);
+    registerEvents();
+  }
+
+  function getName(lang, value) {
+    var nameJson = {
+      "zh-CN": value.name,
+      "zh-TW": value.traditional_name,
+      en: value.english_name,
+    };
+    return nameJson[lang];
+  }
+
+  function getTarget(openMode) {
+    var targetJson = {
+      CURRENT: "_self",
+      NEW_TAB: "_blank",
+    };
+    return targetJson[openMode];
+  }
+
+  function renderHtml(content) {
+    $wgAppsPanel.innerHTML = content;
+
+    setAppsFoldBackgroundImage("app-fold");
+    setTimeout(function () {
+      $wgAppsPanel.style.display = "";
+    }, 500);
+  }
+
+  function setAppsFoldBackgroundImage(className) {
+    document.querySelector("#wg-apps-fold").style.backgroundImage =
+      'url("' + apiDomain + "/static/default-images/" + className + '.svg")';
+  }
+
+  function registerClickFoldEvents() {
+    $wgAppsPanel.querySelectorAll("#wg-apps-fold").forEach((item) => {
+      item.addEventListener("click", function (e) {
+        var width;
+        var drawBodyElem = document.querySelector(".drawer-body");
+        if (this.classList.contains("app-fold")) {
+          this.classList.remove("app-fold");
+          this.classList.add("app-unfold");
+          setAppsFoldBackgroundImage("app-unfold");
+          drawBodyElem.classList.add("unfold");
+          width = "100%";
+        } else {
+          this.classList.remove("app-unfold");
+          this.classList.add("app-fold");
+          setAppsFoldBackgroundImage("app-fold");
+          drawBodyElem.classList.remove("unfold");
+          width = "334px";
+        }
+
+        $wgAppsPanel.querySelector(".pure-drawer").style.width = width;
+      });
+    });
+  }
+
+  function registerClickNavEvents() {
+    $wgAppsPanel.querySelectorAll(".drawer-nav").forEach((item) => {
+      item.addEventListener("click", function (e) {
+        window.location.href = this.querySelector("a.application-icon").getAttribute("href");
+      });
+    });
+  }
+
+  function getWindowWidth() {
+    if (window.innerWidth) {
+      return window.innerWinth;
+    }
+    if ((document.body) && (document.body.clientWidth)) {
+      return document.body.clientWidth;
+    }
+    return 0;
+  }
+
+  function handleToggleAppName() {
+    var toggleAppNameElem = document.querySelectorAll(".pure-toggle-label .app-name");
+
+    var hiddenSize = getToggleAppNameHiddenSize();
+    if (isNaN(hiddenSize) || toggleAppNameElem.length === 0) {
+      return;
+    }
+
+    if (getWindowWidth() < parseInt(hiddenSize)) {
+      toggleAppNameElem.forEach((ele) => {
+        ele.classList.add("hidden");
+      });
+    } else {
+      toggleAppNameElem.forEach((ele) => {
+        ele.classList.remove("hidden");
+      });
+    }
+  }
+
+  function registerResizeToggleAppNameEvents() {
+    var toggleAppNameElem = document.querySelectorAll(".pure-toggle-label .app-name");
+
+    var hiddenSize = getToggleAppNameHiddenSize();
+    if (isNaN(hiddenSize) || toggleAppNameElem.length === 0) {
+      return;
+    }
+
+    handleToggleAppName();
+    window.onresize = function () {
+      handleToggleAppName();
+    };
+  }
+
+  function registerClickEvents() {
+    registerClickFoldEvents();
+    registerClickNavEvents();
+  }
+
+  function registerResizeEvents() {
+    registerResizeToggleAppNameEvents();
+  }
+
+  function registerEvents() {
+    registerClickEvents();
+    registerResizeEvents();
+    document.addEventListener("keyup", function (e) {
+      if (e.keyCode === 27) {
+        var pureToggle = document.querySelector(".pure-toggle[data-toggle='left']:checked");
+        if (pureToggle) {
+          document.querySelector(pureToggle[0]).setAttribute("checked", false);
+        }
+      }
+    });
+  }
+
+  if (uid) {
+    loadAppsPanelSettings(function () {
+      var request = new XMLHttpRequest();
+      request.open("GET", `${apiDomain}/api/users/${uid}/permissions`, true);
+      request.onload = function () {
+        if (this.status >= 200 && this.status < 400) {
+          var data = JSON.parse(this.response);
+          renderAppsHtml(data);
+        }
+      };
+      request.send();
+    });
+  } else {
+    renderAppsHtml([]);
+  }
+};
