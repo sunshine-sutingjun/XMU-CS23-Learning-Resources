@@ -1,0 +1,42 @@
+2¡¢
+data segment
+str1 db 'Happy Birthday !'
+str2 db 'Happy New Year !'
+str3 db 'Merry Chrismas !'
+str4 db 'Hello Mr. Min  !'
+str5 db 'Hello Ms. Ju   !'
+msg  db 16 dup(?), 13, 10, '$'		; 1)
+data ends
+code segment
+	assume ds: data, es: data, cs: code
+main proc far
+start:
+	push ds
+	sub ax, ax
+	push ax
+	mov ax, data
+	mov ds, ax
+	mov es, ax						; 2)
+input:
+	mov ah, 01h						; 3)
+	int 21h
+	sub al, 31h
+	jl input						; 4)
+	cmp al, 4
+	jg input						; 5)
+	mov ah, 0
+	mov cl, 4						; 6)
+	shl ax, cl
+	mov bx, ax
+	lea si, [str1+bx]
+	lea di, msg						; 7)
+	mov cx, 16						; 8)
+	cld
+	rep movsb						; 9)
+	mov dx, offset msg
+	mov ah, 09h
+	int 21h
+	jmp input
+main endp
+code ends
+	end start						; 10)

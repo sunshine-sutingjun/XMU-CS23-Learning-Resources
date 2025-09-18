@@ -1,0 +1,69 @@
+2¡¢
+datasg segment para 'data'
+mess1 db 'stock number?', 13, 10, '$';
+;
+stoknin label byte
+db 3							; 1)
+act db 0						; 2)
+stokn db 5 dup(?)				; 3)
+;
+stoktab db '05', 'Excavtors   '
+		db '08', 'Lifters     '
+		db '09', 'Presses     '
+		db '12', 'Vavles      '
+		db '23', 'Processors  '
+		db '27', 'Pumps       '
+;
+descrn db 14 dup(20h), 13, 10, '$'
+mess db 'Not in table!', '$'
+datasg ends
+;***********************************************
+codesg segment para 'code'
+	assume cs: codesg, ds: datasg, es: datasg
+;-----------------------------------------------
+main proc far
+	push ds
+	sub ax, ax
+	push ax
+	
+	mov ax, datasg
+	mov ds, ax
+	mov es, ax					; 4)
+start:
+	lea dx, mess1
+	mov ah, 09
+	int 21h
+	lea dx, stoknin
+	mov ah, 0ah
+	int 21h
+	cmp act, 0
+	jle exit					; 5)
+	mov al, stokn
+	mov ah, stokn+1
+	mov cx, 06
+	lea si, stoktab
+a20:
+	cmp ax, word ptr [si]
+	jz a30						; 6)
+	add si, 14
+	loop a20					; 7)
+	lea dx, mess
+	mov ah, 09
+	int 21h
+	jmp exit
+a30:
+	lea di, descrn				; 8)
+	mov cx, 14					; 9)
+	rep movsb					; 10)
+;
+	lea dx, descrn
+	mov ah, 09
+	int 21h
+	jmp start
+exit:
+	ret
+main endp
+;----------------------------------------------
+codesg ends
+;**********************************************
+	end main
