@@ -43,10 +43,6 @@
 
 </div>
 
-> 💝 **特别感谢所有为这个项目贡献代码、资料和想法的同学们！**  
-> 🌟 *点击头像可以访问贡献者的 GitHub 主页*  
-> 📊 *更多详细贡献统计请查看 [Contributors](https://github.com/sunshine-sutingjun/XMU-CS23-Learning-Resources/graphs/contributors) 页面*
-
 ### 🎯 主要贡献者
 
 <table align="center">
@@ -113,7 +109,8 @@
 
 > 💝 **特别感谢所有为这个项目贡献代码、资料和想法的同学们！**  
 > 🌟 *点击头像可以访问贡献者的 GitHub 主页*  
-> 📊 *更多详细贡献统计请查看 [Contributors](https://github.com/sunshine-sutingjun/XMU-CS23-Learning-Resources/graphs/contributors) 页面*
+> 📊 *更多详细贡献统计请查看 [Contributors](https://github.com/sunshine-sutingjun/XMU-CS23-Learning-Resources/graphs/contributors) 页面*  
+> 🤖 *贡献者列表通过 GitHub Actions 自动更新*
 
 ## 🤝 贡献指南
 
