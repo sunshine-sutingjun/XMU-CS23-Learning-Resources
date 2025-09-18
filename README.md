@@ -1,74 +1,139 @@
-# 厦门大学信息学院 23 级课程资料收集
+# 厦门大学信息学院 23 级课程资料收集 🎓
 
-(喜欢的话 star 一下就好)
+[![Stars](https://img.shields.io/github/stars/sunshine-sutingjun/XMU-CS23-Learning-Resources?style=flat-square&logo=github)](https://github.com/sunshine-sutingjun/XMU-CS23-Learning-Resources/stargazers)
+[![Forks](https://img.shields.io/github/forks/sunshine-sutingjun/XMU-CS23-Learning-Resources?style=flat-square&logo=github)](https://github.com/sunshine-sutingjun/XMU-CS23-Learning-Resources/network/members)
+[![Issues](https://img.shields.io/github/issues/sunshine-sutingjun/XMU-CS23-Learning-Resources?style=flat-square&logo=github)](https://github.com/sunshine-sutingjun/XMU-CS23-Learning-Resources/issues)
+[![License](https://img.shields.io/github/license/sunshine-sutingjun/XMU-CS23-Learning-Resources?style=flat-square)](./LICENSE)
 
-本项目收集了厦门大学信息学院 23 级的课程学习资料，包括教材电子版、期中期末考试试卷、复习资料等。这些资料对于同年级和低年级的同学们都将有所帮助。
+> 💡 **喜欢的话给个 ⭐ Star 就好！**
 
-## 贡献指南
+## 📖 项目简介
 
-欢迎对本项目感兴趣的同学们通过 Pull Request (PR) 的方式贡献新的资料或改进现有资料。如果在使用过程中有任何问题，请通过 Issue （或者直接联系我）提出。
+本项目收集了厦门大学信息学院 23 级的课程学习资料，包括：
 
-### 如何贡献
+- 📚 **教材电子版** - 各科目核心教材
+- 📝 **考试试卷** - 期中期末考试真题
+- 📋 **复习资料** - 课程笔记、总结资料  
+- 💻 **实验代码** - 编程实验与作业代码
+- 🔗 **学习资源** - 相关学习链接和工具
 
-#### 1. 创建分支
+这些资料对于同年级和低年级的同学们都将有所帮助！
 
-1. Fork 本项目
-2. 创建一个新的分支。分支命名应以你的姓名命名，格式为：`feature/你的姓名`。
+## 🔗 相关推荐
 
-**命令行方法：**
+### 📋 XMU-CS-exam - 试题答案互助库
+**强烈推荐:** [@Misaka-xxw/XMU-CS-exam](https://github.com/Misaka-xxw/XMU-CS-exam) 
 
-```sh
+这是一个专门的厦门大学计算机科学与技术专业试题答案互助库，包含：
+- ✅ 各科目期中期末试卷及答案
+- 💡 作业代码参考
+- 📑 考试复习重点
+- 🎯 专业课生存指南
+
+> 💭 *两个仓库互补使用，学习效果更佳！*
+
+## 👥 贡献者
+
+感谢以下同学为本项目做出的贡献：
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/sunshine-sutingjun">
+        <img src="https://avatars.githubusercontent.com/u/146500301?v=4" width="100px;" alt=""/>
+        <br />
+        <sub><b>Glowrise</b></sub>
+      </a>
+      <br />
+      <sub>项目创建者 & 维护者</sub>
+    </td>
+    <td align="center">
+      <a href="https://github.com/Misaka-xxw">
+        <img src="https://avatars.githubusercontent.com/u/110085579?v=4" width="100px;" alt=""/>
+        <br />
+        <sub><b>Misaka-xxw</b></sub>
+      </a>
+      <br />
+      <sub>资料贡献者</sub>
+    </td>
+  </tr>
+</table>
+
+*更多贡献者信息可通过 [Contributors](https://github.com/sunshine-sutingjun/XMU-CS23-Learning-Resources/graphs/contributors) 页面查看*
+
+## 🤝 贡献指南
+
+欢迎对本项目感兴趣的同学们通过 Pull Request (PR) 的方式贡献新的资料或改进现有资料。如果在使用过程中有任何问题，请通过 Issue（或者直接联系我）提出。
+
+### 📋 如何贡献
+
+#### 🔧 1. 创建分支
+
+1. **Fork 本项目**
+2. **创建一个新的分支**。分支命名应以你的姓名命名，格式为：`feature/你的姓名`
+
+**💻 命令行方法：**
+
+```bash
 git checkout -b feature/YourName
 ```
 
-**GitHub Desktop 方法：**
+**🖥️ GitHub Desktop 方法：**
 
 1. 打开 GitHub Desktop
 2. 选择你 Fork 的仓库
 3. 点击顶部菜单中的“Branch”，选择“New Branch”
-4. 输入分支名称，例如`feature/YourName`
+4. 输入分支名称，例如 `feature/YourName`
 5. 点击“Create Branch”
 
-#### 2. 提交修改
+#### 📤 2. 提交修改
 
-**命令行方法：**
+**💻 命令行方法：**
 
 1. 提交你的修改
-
-   ```sh
+   ```bash
    git commit -m 'Add some AmazingFeature'
    ```
 
 2. 推送到分支
-
-   ```sh
+   ```bash
    git push origin feature/YourName
    ```
 
-**GitHub Desktop 方法：**
+**🖥️ GitHub Desktop 方法：**
 
 1. 在 GitHub Desktop 中，确认你在新的分支上
 2. 做出你的修改并保存
 3. 在 GitHub Desktop 中，填写提交信息，点击“Commit to feature/YourName”
 4. 点击“Push origin”将你的修改推送到 GitHub
 
-#### 3. 打开一个 Pull Request
+#### 🔄 3. 打开一个 Pull Request
 
 1. 访问你的 GitHub 仓库
 2. 点击“Compare & pull request”
 3. 提交 Pull Request
 
-### 额外帮助
+### 💬 额外帮助
 
-如果有人想要提交 PR 但不懂操作，可以直接加我微信或者 QQ（我邮箱看的很少），然后把材料发给我。
+如果有人想要提交 PR 但不懂操作，可以直接联系我（我邮箱看的很少），然后把材料发给我。
 
-## 许可证
+## 📄 许可证
 
-本项目采用 CC-BY-NC-SA 许可证。详细信息请参阅 [LICENSE](./LICENSE) 文件。
+本项目采用 [CC-BY-NC-SA 许可证](./LICENSE)。详细信息请参阅 LICENSE 文件。
 
-## 联系方式
+## 📞 联系方式
 
 如有问题或需要更多信息，请通过以下方式联系我：
 
-- QQ: 3073997145
-- 电话: 18421917413（微信与电话同号）
+- 📧 **QQ**: 3073997145
+- 📱 **电话/微信**: 18421917413
+
+---
+
+<div align="center">
+
+**⭐ 觉得有用的话，请给个 Star 支持一下！**
+
+*让我们一起为学弟学妹们建设更好的学习资源库！* 🎓
+
+</div>
