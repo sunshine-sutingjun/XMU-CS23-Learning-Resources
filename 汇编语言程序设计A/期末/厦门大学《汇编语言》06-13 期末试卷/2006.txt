@@ -1,0 +1,73 @@
+2、
+data segment
+ary	dw	7fffh, 0, 0fff6h, 101h, 8001h, 400h, 1000h	; 本题有误，8000h应改为8001h，程序运行结果为32767,0,-10,-32767,1024,4096,
+n	equ	($-ary)/2		; 1)
+buf	db	7 dup (?)
+data ends
+stack_seg segment
+	dw	40 dup (?)
+tos label word
+stack_seg ends
+code segment
+	assume cs: code, ds: data, ss: stack_seg
+main proc far
+start:
+	mov ax, stack_seg
+	mov ss, ax
+	mov bp, tos			; 2)
+	push ds
+	sub ax, ax
+	push ax
+	mov ax, data
+	mov ds, ax
+	mov cx, n
+	lea bx, ary
+rep1:
+	mov ax, [bx]
+	call bid
+	mov dl, ','
+	mov ah, 02h			; 3)
+	int 21h
+	add bx, 2			; 4)
+	loop rep1
+	ret
+main endp
+bid proc near
+	push bx
+	push cx
+	push dx
+	push si
+	lea si, buf
+	or ax, ax
+	jns pla1			; 5)
+	neg ax
+	mov byte ptr[si], '-'
+	inc si
+pla1:
+	mov bx, 10
+	mov cx, 0
+rep2:
+	cwd					; 6)
+	div bx
+	push dx
+	inc cx
+	or ax, ax
+	jnz rep2
+rep3:
+	pop ax
+	add al, 30h
+	mov [si], al
+	inc si				; 7)
+	loop rep3
+	mov byte ptr [si], '$'
+	lea dx, buf
+	mov ah, 09h			; 8)
+	int 21h
+	pop si
+	pop dx
+	pop cx
+	pop bx
+	ret
+bid endp
+code ends
+	end start
