@@ -1,0 +1,34 @@
+name: Contributors
+on:
+  schedule:
+    - cron: '0 0 * * 0' # 每周日午夜自动更新
+  push:
+    branches: [ main ]
+  workflow_dispatch: # 允许manual触发
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  contrib:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Contribute List
+      uses: akhilmhdh/contributors-readme-action@v2.3.6
+      with:
+        filename: 'README.md'
+        format: 'table'
+        max: 100
+        style: 'square'
+        includeBots: false
+        imageSize: 80
+        columnsPerRow: 6
+        committerAvatarStyle: 'round'
+        committerMargin: 10
+        contributorsPerLine: 6
+        includeName: true
+        includeUsername: true
+        contributorsSortBy: 'contributions'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

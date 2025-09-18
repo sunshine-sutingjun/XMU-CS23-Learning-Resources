@@ -36,30 +36,84 @@
 
 感谢以下同学为本项目做出的贡献：
 
-<table>
+<!-- readme: contributors -start -->
+<div align="center">
+
+[![Contributors](https://contrib.rocks/image?repo=sunshine-sutingjun/XMU-CS23-Learning-Resources&max=100&columns=8)](https://github.com/sunshine-sutingjun/XMU-CS23-Learning-Resources/graphs/contributors)
+
+</div>
+
+> 💝 **特别感谢所有为这个项目贡献代码、资料和想法的同学们！**  
+> 🌟 *点击头像可以访问贡献者的 GitHub 主页*  
+> 📊 *更多详细贡献统计请查看 [Contributors](https://github.com/sunshine-sutingjun/XMU-CS23-Learning-Resources/graphs/contributors) 页面*
+
+### 🎯 主要贡献者
+
+<table align="center">
   <tr>
-    <td align="center">
+    <td align="center" width="120">
       <a href="https://github.com/sunshine-sutingjun">
-        <img src="https://avatars.githubusercontent.com/u/146500301?v=4" width="100px;" alt=""/>
+        <img src="https://avatars.githubusercontent.com/u/146500301?v=4" width="80px;" alt="Glowrise" style="border-radius: 50%;"/>
         <br />
-        <sub><b>Glowrise</b></sub>
+        <sub><b>🚀 Glowrise</b></sub>
+        <br />
+        <sub>项目创建者 & 维护者</sub>
       </a>
-      <br />
-      <sub>项目创建者 & 维护者</sub>
     </td>
-    <td align="center">
+    <td align="center" width="120">
       <a href="https://github.com/Misaka-xxw">
-        <img src="https://avatars.githubusercontent.com/u/110085579?v=4" width="100px;" alt=""/>
+        <img src="https://avatars.githubusercontent.com/u/110085579?v=4" width="80px;" alt="Misaka-xxw" style="border-radius: 50%;"/>
         <br />
-        <sub><b>Misaka-xxw</b></sub>
+        <sub><b>📚 Misaka-xxw</b></sub>
+        <br />
+        <sub>资料贡献者</sub>
       </a>
-      <br />
-      <sub>资料贡献者</sub>
+    </td>
+    <td align="center" width="120">
+      <a href="https://github.com/haiyu614">
+        <img src="https://avatars.githubusercontent.com/u/173423917?v=4" width="80px;" alt="haiyu614" style="border-radius: 50%;"/>
+        <br />
+        <sub><b>📝 haiyu614</b></sub>
+        <br />
+        <sub>试卷贡献者</sub>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="120">
+      <a href="https://github.com/jadeproheshan">
+        <img src="https://avatars.githubusercontent.com/u/177654940?v=4" width="80px;" alt="jadeproheshan" style="border-radius: 50%;"/>
+        <br />
+        <sub><b>📄 jadeproheshan</b></sub>
+        <br />
+        <sub>试卷整理者</sub>
+      </a>
+    </td>
+    <td align="center" width="120">
+      <a href="https://github.com/Anxcye">
+        <img src="https://avatars.githubusercontent.com/u/91717732?v=4" width="80px;" alt="Anxcye" style="border-radius: 50%;"/>
+        <br />
+        <sub><b>🔬 Anxcye</b></sub>
+        <br />
+        <sub>资料贡献者</sub>
+      </a>
+    </td>
+    <td align="center" width="120">
+      <a href="https://github.com/sunshine-sutingjun/XMU-CS23-Learning-Resources/graphs/contributors">
+        <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" width="80px;" alt="更多贡献者" style="border-radius: 50%; opacity: 0.7;"/>
+        <br />
+        <sub><b>➕ 更多</b></sub>
+        <br />
+        <sub>查看所有贡献者</sub>
+      </a>
     </td>
   </tr>
 </table>
+<!-- readme: contributors -end -->
 
-*更多贡献者信息可通过 [Contributors](https://github.com/sunshine-sutingjun/XMU-CS23-Learning-Resources/graphs/contributors) 页面查看*
+> 💝 **特别感谢所有为这个项目贡献代码、资料和想法的同学们！**  
+> 🌟 *点击头像可以访问贡献者的 GitHub 主页*  
+> 📊 *更多详细贡献统计请查看 [Contributors](https://github.com/sunshine-sutingjun/XMU-CS23-Learning-Resources/graphs/contributors) 页面*
 
 ## 🤝 贡献指南
 
