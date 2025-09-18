@@ -1,0 +1,48 @@
+name: Update Contributors
+
+on:
+  schedule:
+    - cron: '0 2 * * 1' # 每周一凌晨2点自动更新
+  push:
+    branches: [ main ]
+  workflow_dispatch: # 允许手动触发
+
+jobs:
+  update-contributors:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Update contributors section
+      uses: wow-actions/contributors-readme@v1
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        filename: README.md
+        format: table
+        max: 100
+        flush: false
+        includeBots: false
+        round: true
+        size: 80
+        sortBy: contributions
+        affiliation: all
+        noCommit: false
+        excludeUsers: 'web-flow,dependabot[bot],github-actions[bot]'
+        template: |
+          {{#each contributors}}
+          <a href="{{htmlUrl}}">
+            <img src="{{avatar}}&s={{../size}}" width="{{../size}}" style="border-radius: 50%;" alt="{{login}}"/>
+          </a>
+          {{/each}}
+        
+    - name: Commit changes
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: '🤖 自动更新贡献者列表'
+        file_pattern: README.md
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,32 @@
+name: 🤖 自动更新贡献者
+
+on:
+  schedule:
+    - cron: '0 1 * * 1' # 每周一凌晨1点运行
+  push:
+    branches: [ main ]
+  workflow_dispatch: # 允许手动触发
+
+jobs:
+  update-contributors:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
+    steps:
+    - name: 📥 检出代码
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        
+    - name: 🎨 更新贡献者显示
+      uses: BobAnkh/add-contributors@master
+      with:
+        CONTRIBUTOR: '### 🤖 自动生成的贡献者列表'
+        COLUMN_PER_ROW: '6'
+        ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        IMG_WIDTH: '80'
+        FONT_SIZE: '14'
+        PATH: '/README.md'
+        COMMIT_MESSAGE: '🤖 自动更新贡献者列表'
+        AVATAR_SHAPE: 'round'
