@@ -37,73 +37,50 @@
 感谢以下同学为本项目做出的贡献：
 
 <!-- readme: contributors -start -->
-<div align="center">
-
-[![Contributors](https://contrib.rocks/image?repo=sunshine-sutingjun/XMU-CS23-Learning-Resources&max=100&columns=8)](https://github.com/sunshine-sutingjun/XMU-CS23-Learning-Resources/graphs/contributors)
-
-</div>
-
-### 🎯 主要贡献者
-
-<table align="center">
-  <tr>
-    <td align="center" width="120">
-      <a href="https://github.com/sunshine-sutingjun">
-        <img src="https://avatars.githubusercontent.com/u/146500301?v=4" width="80px;" alt="Glowrise" style="border-radius: 50%;"/>
-        <br />
-        <sub><b>🚀 Glowrise</b></sub>
-        <br />
-        <sub>项目创建者 & 维护者</sub>
-      </a>
+<table>
+<tr>
+    <td align="center">
+        <a href="https://github.com/sunshine-sutingjun">
+            <img src="https://avatars.githubusercontent.com/u/146500301?v=4" width="100;" alt="sunshine-sutingjun"/>
+            <br />
+            <sub><b>Glowrise</b></sub>
+        </a>
     </td>
-    <td align="center" width="120">
-      <a href="https://github.com/Misaka-xxw">
-        <img src="https://avatars.githubusercontent.com/u/110085579?v=4" width="80px;" alt="Misaka-xxw" style="border-radius: 50%;"/>
-        <br />
-        <sub><b>📚 Misaka-xxw</b></sub>
-        <br />
-        <sub>资料贡献者</sub>
-      </a>
+    <td align="center">
+        <a href="https://github.com/Misaka-xxw">
+            <img src="https://avatars.githubusercontent.com/u/110085579?v=4" width="100;" alt="Misaka-xxw"/>
+            <br />
+            <sub><b>📚 Misaka-xxw</b></sub>
+        </a>
     </td>
-    <td align="center" width="120">
-      <a href="https://github.com/haiyu614">
-        <img src="https://avatars.githubusercontent.com/u/173423917?v=4" width="80px;" alt="haiyu614" style="border-radius: 50%;"/>
-        <br />
-        <sub><b>📝 haiyu614</b></sub>
-        <br />
-        <sub>试卷贡献者</sub>
-      </a>
+    <td align="center">
+        <a href="https://github.com/MegaFish2005">
+            <img src="https://avatars.githubusercontent.com/u/163986513?v=4" width="100;" alt="MegaFish2005"/>
+            <br />
+            <sub><b>Null</b></sub>
+        </a>
     </td>
-  </tr>
-  <tr>
-    <td align="center" width="120">
-      <a href="https://github.com/jadeproheshan">
-        <img src="https://avatars.githubusercontent.com/u/177654940?v=4" width="80px;" alt="jadeproheshan" style="border-radius: 50%;"/>
-        <br />
-        <sub><b>📄 jadeproheshan</b></sub>
-        <br />
-        <sub>试卷整理者</sub>
-      </a>
+    <td align="center">
+        <a href="https://github.com/Anxcye">
+            <img src="https://avatars.githubusercontent.com/u/91717732?v=4" width="100;" alt="Anxcye"/>
+            <br />
+            <sub><b>🔬 Anxcye</b></sub>
+        </a>
     </td>
-    <td align="center" width="120">
-      <a href="https://github.com/Anxcye">
-        <img src="https://avatars.githubusercontent.com/u/91717732?v=4" width="80px;" alt="Anxcye" style="border-radius: 50%;"/>
-        <br />
-        <sub><b>🔬 Anxcye</b></sub>
-        <br />
-        <sub>资料贡献者</sub>
-      </a>
+    <td align="center">
+        <a href="https://github.com/haiyu614">
+            <img src="https://avatars.githubusercontent.com/u/173423917?v=4" width="100;" alt="haiyu614"/>
+            <br />
+            <sub><b>📝 Haiyu614</b></sub>
+        </a>
     </td>
-    <td align="center" width="120">
-      <a href="https://github.com/sunshine-sutingjun/XMU-CS23-Learning-Resources/graphs/contributors">
-        <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" width="80px;" alt="更多贡献者" style="border-radius: 50%; opacity: 0.7;"/>
-        <br />
-        <sub><b>➕ 更多</b></sub>
-        <br />
-        <sub>查看所有贡献者</sub>
-      </a>
-    </td>
-  </tr>
+    <td align="center">
+        <a href="https://github.com/jadeproheshan">
+            <img src="https://avatars.githubusercontent.com/u/177654940?v=4" width="100;" alt="jadeproheshan"/>
+            <br />
+            <sub><b>📄 Jadeproheshan</b></sub>
+        </a>
+    </td></tr>
 </table>
 <!-- readme: contributors -end -->
 
